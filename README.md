@@ -38,6 +38,20 @@ credentials: /path/to/credentials
 create_ci: false
 ```
 
+We are using a containerised solution below. Here we are choosing K8s as our IAAC tool, we would create
+the K8s cluster no app type has been provided because we would be create the containers separately to
+these pipelines.
+
+```yml
+ci: circleci
+cloud: gcp
+iaac: kuberenetes
+cfg_management: helm
+monitoring: zabbix
+credentials: /path/to/credentials
+create_ci: false
+```
+
 The outcomes generated will be fairly generic as it is used as a building block for teams, it
 is to be used as a way getting you and your team working quickly. You would then need to add the
 specific configuration to make it suitable for your use case.
